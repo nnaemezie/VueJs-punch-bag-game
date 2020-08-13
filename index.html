@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Introduction to Vue JS | Events</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="vue-app">
+        <!--bag image-->
+        <div id="bag" v-bind:class="{burst: ended}"></div>
+
+        <!--bag health-->
+        <div id="bag-health">
+            <div v-bind:style="{width: health + '%'}">{{health}}%</div>
+        </div>
+
+        <!--game controls-->
+        <div id="controls">
+            <button @click="punch" v-show="!ended">Punch</button>
+            <button @click="restart">Restart</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
